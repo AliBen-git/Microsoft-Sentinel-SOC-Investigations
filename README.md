@@ -21,6 +21,24 @@ A hunting bookmark was created for `138.124.7.7`.
 
 **Assessment:** The retained evidence shows repeated failed SSH authentication attempts, including activity consistent with username enumeration. A successful SSH login was **not verified in the available material**. No unauthorized access or host compromise can therefore be confirmed from this investigation record.
 
+## Lab environment and platform evidence
+
+The following screenshots document the Azure resources and Microsoft security portal views retained from the lab.
+
+### Azure lab environment
+
+![Azure lab environment showing the Log Analytics workspace and related Azure resources](investigations/ssh-brute-force/screenshots/01-azure-lab-environment.png)
+
+### Microsoft Sentinel / Defender overview
+
+![Microsoft Defender portal showing Sentinel navigation, SOC optimization and UEBA](investigations/ssh-brute-force/screenshots/02-sentinel-security-overview.png)
+
+### Microsoft Secure Score
+
+![Microsoft Secure Score dashboard showing 89.29 percent and 50 of 56 points](investigations/ssh-brute-force/screenshots/03-microsoft-secure-score.png)
+
+> The Secure Score screenshot is contextual evidence from the lab environment. It is not presented as a score personally achieved through this SSH investigation.
+
 ## Investigation workflow
 
 1. Review Syslog events collected from the Linux lab VM.
@@ -55,6 +73,9 @@ The query is an example of the investigation method. The result counts above are
 │       ├── README.md
 │       ├── incident-report.md
 │       └── screenshots/
+│           ├── 01-azure-lab-environment.png
+│           ├── 02-sentinel-security-overview.png
+│           ├── 03-microsoft-secure-score.png
 │           └── README.md
 ├── kql-queries/
 │   ├── README.md
@@ -84,7 +105,7 @@ The module list describes the learning scope shared for this lab. This repositor
 - The lab was simulated and conducted in an Azure learning environment.
 - The original lab environment is no longer accessible.
 - Documentation is based on material retained from April 2026.
-- Screenshots should be added only when they directly support the section they illustrate.
+- Screenshots document the lab environment and portal context; they do not independently prove the SSH findings.
 - The available record does not verify a successful SSH login, unauthorized access, or compromise.
 - The source IPs are reproduced as recorded in the lab notes; they are not independently attributed to a real-world actor.
 
@@ -92,4 +113,4 @@ The module list describes the learning scope shared for this lab. This repositor
 
 - [Microsoft Sentinel documentation](https://learn.microsoft.com/azure/sentinel/)
 - [Kusto Query Language documentation](https://learn.microsoft.com/azure/data-explorer/kusto/query/)
-- [Analyze security events with Microsoft Sentinel](https://learn.microsoft.com/azure/sentinel/)
+- [Microsoft Secure Score](https://learn.microsoft.com/defender-for-identity/security-posture-assessments)
