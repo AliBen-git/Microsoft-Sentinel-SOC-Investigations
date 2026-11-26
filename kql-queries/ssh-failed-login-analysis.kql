@@ -1,0 +1,6 @@
+// Identify failed SSH password attempts and summarize by source IP.
+Syslog
+| where SyslogMessage contains "Failed password"
+| parse SyslogMessage with * "for " User " from " SrcIP " port " *
+| summarize Attempts = count(), UsersTargeted = dcount(User) by SrcIP
+| order by Attempts desc
