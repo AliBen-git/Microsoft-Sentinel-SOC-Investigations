@@ -44,6 +44,22 @@ A successful SSH login was not verified in the available material. The report th
 
 See [the KQL query](../../kql-queries/ssh-failed-login-analysis.kql) and [investigation methodology](../../documentation/investigation-methodology.md).
 
-## Evidence
+## Lab environment screenshots
 
-See [screenshots README](screenshots/README.md) for the planned evidence set. Images have not been added to this repository yet.
+### Azure resources
+
+![Azure lab environment](screenshots/01-azure-lab-environment.png)
+
+### Microsoft Sentinel / Defender
+
+![Microsoft Sentinel and Defender overview](screenshots/02-sentinel-security-overview.png)
+
+### Microsoft Secure Score
+
+![Microsoft Secure Score dashboard](screenshots/03-microsoft-secure-score.png)
+
+The Secure Score image provides context about the wider lab environment. It is not evidence of the SSH attack outcome.
+
+## Evidence limitations
+
+The screenshots above document the environment and portal context. The SSH findings are based on retained lab notes and query documentation; the screenshots do not independently verify the event counts or prove a successful login.
